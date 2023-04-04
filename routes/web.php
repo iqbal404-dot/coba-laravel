@@ -14,5 +14,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view("home", [
+        "judul" => "Home",
+        "css" => "style"
+    ]);
+});
+
+Route::get('/about', function () {
+    return view("about", [
+        "judul" => "Tentang",
+        "css" => "about",
+        "name" => "Fieryald Charifi Annazmi",
+        "email" => "Fieryaldchf404@gmail.com",
+        "image" => "fieryald.jpg"
+    ]);
+});
+
+Route::get('/produk', function () {
+    return view("produk", [
+        "judul" => "Produk"
+    ]);
+});
+
+Route::get('/fasilitas', function () {
+    return view("fasilitas", [
+        "judul" => "Fasilitas"
+    ]);
 });
