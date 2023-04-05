@@ -21,7 +21,9 @@
     @include('partials.navbar')
   </header>
   <main>
+    {{-- home --}}
     @yield('corousel')
+    {{-- home --}}
     <div class="container mt-4">
         @yield('container')
     </div>

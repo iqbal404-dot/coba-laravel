@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,58 +46,7 @@ Route::get('/fasilitas', function () {
     ]);
 });
 
-
 // BLOG
-
-Route::get('/blog', function () {
-    $blog_posts = [
-        [
-            "judul" => "Judul Post Pertama",
-            "author" => "Fieryald Charifi",
-            "slug" => "judul-post-pertama",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam eum pariatur facilis, error consequuntur eius necessitatibus facere. Cupiditate quaerat possimus libero eligendi facere, voluptate laborum quos non, quae error modi nisi ratione. Totam at dolores voluptatibus optio placeat numquam obcaecati, ullam soluta nesciunt quia sequi ea, laboriosam minima mollitia, nihil maiores ab sint eum consequatur cumque est aperiam. Veniam tempore error ipsum vitae aperiam ipsa consectetur rerum, nostrum doloremque qui animi enim excepturi voluptatem amet odio ullam expedita modi ex? Beatae, sunt minima, natus quos iusto eveniet quia adipisci non eligendi corporis facere maiores consectetur cupiditate. Rerum quam magni rem."
-        ],
-        [
-            "judul" => "Judul Post Kedua",
-            "author" => "Muhammad Iqbal",
-            "slug" => "judul-post-kedua",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam eum pariatur facilis, error consequuntur eius necessitatibus facere. Cupiditate quaerat possimus libero eligendi facere, voluptate laborum quos non, quae error modi nisi ratione. Totam at dolores voluptatibus optio placeat numquam obcaecati, ullam soluta nesciunt quia sequi ea."
-        ]    
-    ];
-
-    return view("blog", [
-        "judul" => "Blog",
-        "css" => "blog",
-        "posts" => $blog_posts
-    ]);
-});
-
+Route::get('/blog', [PostController::class, "index"]);
 // single blog
-Route::get('blog/{slug}', function ($slug) {
-    $blog_posts = [
-        [
-            "judul" => "Judul Post Pertama",
-            "author" => "Fieryald Charifi",
-            "slug" => "judul-post-pertama",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam eum pariatur facilis, error consequuntur eius necessitatibus facere. Cupiditate quaerat possimus libero eligendi facere, voluptate laborum quos non, quae error modi nisi ratione. Totam at dolores voluptatibus optio placeat numquam obcaecati, ullam soluta nesciunt quia sequi ea, laboriosam minima mollitia, nihil maiores ab sint eum consequatur cumque est aperiam. Veniam tempore error ipsum vitae aperiam ipsa consectetur rerum, nostrum doloremque qui animi enim excepturi voluptatem amet odio ullam expedita modi ex? Beatae, sunt minima, natus quos iusto eveniet quia adipisci non eligendi corporis facere maiores consectetur cupiditate. Rerum quam magni rem."
-        ],
-        [
-            "judul" => "Judul Post Kedua",
-            "author" => "Muhammad Iqbal",
-            "slug" => "judul-post-kedua",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam eum pariatur facilis, error consequuntur eius necessitatibus facere. Cupiditate quaerat possimus libero eligendi facere, voluptate laborum quos non, quae error modi nisi ratione. Totam at dolores voluptatibus optio placeat numquam obcaecati, ullam soluta nesciunt quia sequi ea."
-        ]    
-    ];
-
-    $new_post = [];
-    foreach($blog_posts as $post){
-        if($post["slug"] === $slug){
-            $new_post = $post;
-        }
-    }
-    return view("post", [
-        "judul" => "Single Post",
-        "css" => "blog",
-        "post" => $new_post
-    ]);
-});
+Route::get('blog/{slug}', [PostController::class, "singleShow"]);
