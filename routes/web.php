@@ -49,4 +49,4 @@ Route::get('/fasilitas', function () {
 // BLOG
 Route::get('/blog', [PostController::class, "index"]);
 // single blog
-Route::get('blog/{slug}', [PostController::class, "singleShow"]);
+Route::get('blog/{post:slug}', [PostController::class, "singleShow"]);
