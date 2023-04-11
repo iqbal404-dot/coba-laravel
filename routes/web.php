@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Models\Kategori;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,21 @@ Route::get('/fasilitas', function () {
 Route::get('/blog', [PostController::class, "index"]);
 // single blog
 Route::get('blog/{post:slug}', [PostController::class, "singleShow"]);
+
+Route::get('/kategori', function () {
+    return view("kategories", [
+        "judul" => "Post Kategori",
+        "css" => "kategori",
+        "kategories" => Kategori::all()
+    ]);
+});
+
+Route::get('/kategori/{kategori:slug}', function (Kategori $kategori) {
+    return view("kategori", [
+        "judul" => $kategori->name,
+        "css" => "kategori",
+        "posts" => $kategori->post,
+        "kategori" => $kategori->name
+    ]);
+});
+

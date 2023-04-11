@@ -1,5 +1,5 @@
-App\Models\Post::create([ "judul" => "Judul Post Ke Empat", "slug" =>
-"judul-post-ke-empat", "excerpt" => "Lorem ipsum dolor sit, amet consectetur
+$post::create([ "kategori_id" => 3, "judul" => "Judul Ke Tiga", "slug" =>
+"judul-post-ke-tiga", "excerpt" => "Lorem ipsum dolor sit, amet consectetur
 adipisicing elit. Nisi incidunt suscipit voluptates, vitae pariatur iste
 voluptatum magni", "body" => "
 <p>
@@ -40,3 +40,6 @@ voluptatum magni", "body" => "
     quos laborum expedita illo sapiente. Provident molestias officiis modi quis
     vitae dolore quae!
 </p>
+
+$kategori::create([ "name" => "Sepatu", "slug" => "sepatu" ])
+$post::where("kategori_id", 1)->get()
