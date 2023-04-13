@@ -12,7 +12,8 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
   {{-- css --}}
-  <link rel="stylesheet" href="css/{{ $css }}.css">
+  <link rel="stylesheet" href="/css/{{ $css }}.css">
+  <link rel="stylesheet" href="{{ URL::asset('css/font.css') }}">
 
 </head>
 
