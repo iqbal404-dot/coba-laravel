@@ -4,6 +4,7 @@ use App\Http\Controllers\PostController;
 use App\Models\Kategori;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,15 @@ Route::get('/kategori/{kategori:slug}', function (Kategori $kategori) {
         "css" => "kategori",
         "posts" => $kategori->post,
         "kategori" => $kategori->name
+    ]);
+});
+
+Route::get('/author/{author:username}', function (User $author) {
+    return view("author", [
+        "judul" => "User Posts",
+        "name" => $author->name,
+        "css" => "author",
+        "posts" => $author->post
     ]);
 });
 

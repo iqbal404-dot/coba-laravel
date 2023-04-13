@@ -7,6 +7,7 @@
     <div class="card">
       <div class="card-body">
         <a href="/blog/{{ $post->slug }}"><h5 class="card-title">{{ $post->judul }}</h5></a>
+        <p>By. <a href="/author/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a href="/kategori/{{ $post->kategori->slug }}">{{ $post->kategori->name }}</a></p>
         <p class="card-text">{{ $post->excerpt }}</p>
       </div>
     </div>
