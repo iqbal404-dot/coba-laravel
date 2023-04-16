@@ -65,7 +65,7 @@ Route::get('/kategori/{kategori:slug}', function (Kategori $kategori) {
     return view("kategori", [
         "judul" => $kategori->name,
         "css" => "kategori",
-        "posts" => $kategori->post,
+        "posts" => $kategori->post->load("author"),
         "kategori" => $kategori->name
     ]);
 });
@@ -75,7 +75,7 @@ Route::get('/author/{author:username}', function (User $author) {
         "judul" => "User Posts",
         "name" => $author->name,
         "css" => "author",
-        "posts" => $author->post
+        "posts" => $author->post->load("kategori")
     ]);
 });
 

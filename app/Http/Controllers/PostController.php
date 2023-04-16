@@ -12,7 +12,7 @@ class PostController extends Controller
             "judul" => "Blog",
             "css" => "blog",
             // "posts" => Post::all()
-            "posts" => Post::latest()->get()
+            "posts" => Post::with(["author", "kategori"])->latest()->get()
         ]);
     }
 
