@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(5)->create();
 
         // User::create([
         //     "name" => "Fieryald Charifi",
@@ -25,19 +24,21 @@ class DatabaseSeeder extends Seeder
         //     "status" => "superadmin"
         // ]);
 
+        User::factory(5)->create();
+
         Kategori::create([
-            "name" => "Jaket",
-            "slug" => "jaket"
+            "name" => "Jacket",
+            "slug" => "jacket"
         ]);
         Kategori::create([
-            "name" => "Sepatu",
-            "slug" => "sepatu"
+            "name" => "Shoes",
+            "slug" => "shoes"
         ]);
         Kategori::create([
-            "name" => "Aksesoris",
-            "slug" => "aksesoris"
+            "name" => "Fashion",
+            "slug" => "fashion"
         ]);
 
-        Post::factory(20)->create();
+        Post::factory(1)->create();
     }
 }

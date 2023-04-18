@@ -20,7 +20,8 @@ use App\Models\User;
 Route::get('/', function () {
     return view("home", [
         "judul" => "Home",
-        "css" => "style"
+        "css" => "style",
+        "posts" => Post::with(["author", "kategori"])->latest()->get()
     ]);
 });
 
