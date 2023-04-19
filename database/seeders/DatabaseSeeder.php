@@ -39,6 +39,6 @@ class DatabaseSeeder extends Seeder
             "slug" => "fashion"
         ]);
 
-        Post::factory(1)->create();
+        Post::factory(5)->create();
     }
 }
