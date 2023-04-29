@@ -38,7 +38,11 @@ class DatabaseSeeder extends Seeder
             "name" => "Fashion",
             "slug" => "fashion"
         ]);
+        Kategori::create([
+            "name" => "T-Shirt",
+            "slug" => "t-shirt"
+        ]);
 
-        Post::factory(5)->create();
+        Post::factory(18)->create();
     }
 }
