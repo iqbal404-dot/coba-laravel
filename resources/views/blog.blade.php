@@ -1,6 +1,19 @@
 @extends('layouts.main')
 
 @section('container')
+<h1 class="mb-3 text-center">{{ $judul }}</h1>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-6">
+    <form action="/blog">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 @if ($posts->count())
 <div class="card mb-3">
   <img src="https://source.unsplash.com/random/1200x400/?{{ $posts[0]->kategori->name }}" class="card-img-top" alt="...">
@@ -12,9 +25,6 @@
     <p class="card-text mt-2"><small class="text-muted">{{ $posts[0]->created_at->diffFOrHumans() }}</small></p>
   </div>
 </div>
-@else
-    <p class="text-center fs-4">Belum Ada Postingan.</p>
-@endif
 
 <div class="container">
   <div class="row">
@@ -34,4 +44,11 @@
     @endforeach
   </div>
 </div>
+
+@else
+    <p class="text-center fs-4">Tidak Ada Postingan.</p>
+@endif
+
+{{ $posts->links() }}
+
 @endsection
