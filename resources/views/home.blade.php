@@ -49,7 +49,7 @@
             <img src="https://source.unsplash.com/random/1200x300/?{{ $posts[0]->kategori->name }}" class="card-img-top" alt="...">
             <div class="card-body text-center">
               <a class="text-decoration-none text-dark" href="/blog/{{ $posts[0]->slug }}"><h5 class="card-title">{{ $posts[0]->judul }}</h5></a>
-              <p>By. <a class="text-decoration-none" href="/author/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/kategori/{{ $posts[0]->kategori->slug }}">{{ $posts[0]->kategori->name }}</a></p>
+              <p>By. <a class="text-decoration-none" href="/blog?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/blog?kategori={{ $posts[0]->kategori->slug }}">{{ $posts[0]->kategori->name }}</a></p>
               <p class="card-text">{{ $posts[0]->excerpt }}</p>
               <a class="btn btn-primary" href="/blog/{{ $posts[0]->slug }}" role="button">Baca Selengkapnya</a>
               <p class="card-text mt-2"><small class="text-muted">{{ $posts[0]->created_at->diffFOrHumans() }}</small></p>
@@ -63,7 +63,7 @@
                   <img src="https://source.unsplash.com/random/500x200/?{{ $posts[1]->kategori->name }}" class="card-img-top" alt="{{ $posts[1]->kategori->name }}">
                   <div class="card-body text-center">
                     <a class="text-decoration-none text-dark" href="/blog/{{ $posts[1]->slug }}"><h5 class="card-title">{{ $posts[1]->judul }}</h5></a>
-                    <p>By. <a class="text-decoration-none" href="/author/{{ $posts[1]->author->username }}">{{ $posts[1]->author->name }}</a> in <a class="text-decoration-none" href="/kategori/{{ $posts[1]->kategori->slug }}">{{ $posts[1]->kategori->name }}</a></p>
+                    <p>By. <a class="text-decoration-none" href="/blog?author={{ $posts[1]->author->username }}">{{ $posts[1]->author->name }}</a> in <a class="text-decoration-none" href="/blog?kategori={{ $posts[1]->kategori->slug }}">{{ $posts[1]->kategori->name }}</a></p>
                     <p class="card-text">{{ $posts[1]->excerpt }}</p>
                     <p class="card-text mt-2"><small class="text-muted">{{ $posts[1]->created_at->diffFOrHumans() }}</small></p>
                   </div>
@@ -74,7 +74,7 @@
                   <img src="https://source.unsplash.com/random/500x200/?{{ $posts[2]->kategori->name }}" class="card-img-top" alt="{{ $posts[2]->kategori->name }}">
                   <div class="card-body text-center">
                     <a class="text-decoration-none text-dark" href="/blog/{{ $posts[2]->slug }}"><h5 class="card-title">{{ $posts[2]->judul }}</h5></a>
-                    <p>By. <a class="text-decoration-none" href="/author/{{ $posts[2]->author->username }}">{{ $posts[2]->author->name }}</a> in <a class="text-decoration-none" href="/kategori/{{ $posts[2]->kategori->slug }}">{{ $posts[2]->kategori->name }}</a></p>
+                    <p>By. <a class="text-decoration-none" href="/blog?author={{ $posts[2]->author->username }}">{{ $posts[2]->author->name }}</a> in <a class="text-decoration-none" href="/blog?kategori={{ $posts[2]->kategori->slug }}">{{ $posts[2]->kategori->name }}</a></p>
                     <p class="card-text">{{ $posts[2]->excerpt }}</p>
                     <p class="card-text mt-2"><small class="text-muted">{{ $posts[2]->created_at->diffFOrHumans() }}</small></p>
                   </div>
@@ -87,7 +87,7 @@
             <img src="https://source.unsplash.com/random/1200x300/?{{ $posts[0]->kategori->name }}" class="card-img-top" alt="...">
             <div class="card-body text-center">
               <a class="text-decoration-none text-dark" href="/blog/{{ $posts[0]->slug }}"><h5 class="card-title">{{ $posts[0]->judul }}</h5></a>
-              <p>By. <a class="text-decoration-none" href="/author/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/kategori/{{ $posts[0]->kategori->slug }}">{{ $posts[0]->kategori->name }}</a></p>
+              <p>By. <a class="text-decoration-none" href="/blog?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/blog?kategori={{ $posts[0]->kategori->slug }}">{{ $posts[0]->kategori->name }}</a></p>
               <p class="card-text">{{ $posts[0]->excerpt }}</p>
               <a class="btn btn-primary" href="/blog/{{ $posts[0]->slug }}" role="button">Baca Selengkapnya</a>
               <p class="card-text mt-2"><small class="text-muted">{{ $posts[0]->created_at->diffFOrHumans() }}</small></p>

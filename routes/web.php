@@ -62,23 +62,19 @@ Route::get('/kategori', function () {
     ]);
 });
 
-Route::get('/kategori/{kategori:slug}', function (Kategori $kategori) {
-    $posts = $kategori->post()->with("author", "kategori")->paginate(4);
-    return view("blog", [
-        "judul" => $kategori->name,
-        "css" => "kategori",
-        "posts" => $posts,
-        "kategori" => $kategori->name
-    ]);
-});
+// Route::get('/kategori/{kategori:slug}', function (Kategori $kategori) {
+//     return view("blog", [
+//         "judul" => "Post by Kategori: $kategori->name",
+//         "css" => "kategori",
+//         "posts" => $kategori->post()->load("author", "kategori")
+//     ]);
+// });
 
-Route::get('/author/{author:username}', function (User $author) {
-    $posts = $author->post()->with("author", "kategori")->paginate(4);
-    return view("blog", [
-        "judul" => $author->name,
-        "name" => $author->name,
-        "css" => "author",
-        "posts" => $posts
-    ]);
-});
+// Route::get('/author/{author:username}', function (User $author) {
+//     return view("blog", [
+//         "judul" => "Post by Author: $author->name",
+//         "css" => "author",
+//         "posts" => $author->post()->load("author", "kategori")
+//     ]);
+// });
 

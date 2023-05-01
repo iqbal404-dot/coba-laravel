@@ -6,7 +6,7 @@
 <div class="row">
     @foreach ($kategories as $kategori)
     <div class="col-md-4 mb-4">
-        <a href="/kategori/{{ $kategori->slug }}">
+        <a href="/blog?kategori={{ $kategori->slug }}">
             <div class="card bg-dark text-white">
                 <img src="https://source.unsplash.com/random/300x200/?{{ $kategori->name }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
