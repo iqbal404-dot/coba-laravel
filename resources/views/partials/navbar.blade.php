@@ -21,15 +21,9 @@
             <li class="nav-item">
                 <a class="nav-link {{ ($judul === "Blog") ? "active" : "" }}" href="/blog">Blog</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Pencapaian
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Prestasi</a></li>
-                <li><a class="dropdown-item" href="#">KerjaSama</a></li>
-                </ul>
-            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ ($judul === "Login") ? "active" : "" }}" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            </li>  
             </ul>
         </div>
         </div>

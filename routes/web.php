@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\PostController;
-use App\Models\Kategori;
 use App\Models\Post;
-use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Models\Kategori;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +80,5 @@ Route::get('/kategori', function () {
 //     ]);
 // });
 
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
