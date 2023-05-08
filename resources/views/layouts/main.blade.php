@@ -22,9 +22,10 @@
 
 <body>
   <header>
-    @if (!Request::is('login', 'register'))
+    {{-- @if (!Request::is('login', 'register'))
       @include('partials.navbar')  
-    @endif
+    @endif --}}
+    @include('partials.navbar')
   </header>
   <main>
     {{-- home --}}
